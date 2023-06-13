@@ -73,3 +73,68 @@ To use ngx-sortable-table, you need to follow these steps:
    ```
 
 With ngx-sortable-table, the table headers with the `sortable` directive will have sorting functionality enabled. Clicking on a sortable header will trigger the sorting of the table data based on the specified property. The sorted data can be accessed in your component for further processing or display.
+
+# ngx-order-pipe is an Angular library that provides sorting functionality for arrays or lists in Angular templates. It allows you to sort data based on different properties or columns.
+
+To use ngx-order-pipe for sorting, you need to follow these steps:
+
+1. Install the ngx-order-pipe library by running the following command in your Angular project directory:
+
+   ```
+   npm install ngx-order-pipe
+   ```
+
+2. Import the OrderModule into your Angular module:
+
+   ```typescript
+   import { OrderModule } from 'ngx-order-pipe';
+
+   @NgModule({
+     imports: [
+       OrderModule
+     ]
+   })
+   export class YourModule { }
+   ```
+
+3. In your HTML template, use the `orderBy` pipe to sort the data. You can specify the property or properties to sort by using the pipe parameter:
+
+   ```html
+   <ul>
+     <li *ngFor="let item of items | orderBy:'propertyName'">{{ item }}</li>
+   </ul>
+   ```
+
+   You can also sort by multiple properties by separating them with a comma:
+
+   ```html
+   <ul>
+     <li *ngFor="let item of items | orderBy:['property1', 'property2']">{{ item }}</li>
+   </ul>
+   ```
+
+   By default, the `orderBy` pipe sorts the data in ascending order. To sort in descending order, you can use the `-` prefix:
+
+   ```html
+   <ul>
+     <li *ngFor="let item of items | orderBy:'-propertyName'">{{ item }}</li>
+   </ul>
+   ```
+
+4. In your component, define the data array that you want to sort:
+
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-your-component',
+     templateUrl: './your-component.component.html'
+   })
+   export class YourComponent {
+     items = [4, 2, 5, 1, 3];
+   }
+   ```
+
+5. The data will be sorted based on the specified property or properties in your template.
+
+With ngx-order-pipe, you can easily sort arrays or lists in your Angular templates without having to implement sorting logic in your component. The sorting is done directly in the template using the `orderBy` pipe, providing a convenient way to display sorted data to the user.
