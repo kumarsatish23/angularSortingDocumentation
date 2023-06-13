@@ -1,4 +1,4 @@
-#ngx-sortable-table is an Angular library that provides sorting functionality for tables. It allows you to easily add sorting capabilities to your tables by using a directive.
+# ngx-sortable-table is an Angular library that provides sorting functionality for tables. It allows you to easily add sorting capabilities to your tables by using a directive.
 
 To use ngx-sortable-table, you need to follow these steps:
 
